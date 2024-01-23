@@ -240,12 +240,13 @@ studio = pandas.read_csv("CSV/studio_museum.csv")
 ephemera = pandas.read_csv("CSV/ephemera.csv")
 
 
-fields = {"objectid" : [], "title" : [], "filename" : [], "format" : [], "volume" : [], "publisher" : [], 
+fields = {"objectid" : [], "title" : [], "filename" : [], "kind" : [], "volume" : [], "publisher" : [], 
           "record company" : [], "youtubeid" : [], "creator" : [], "description" : [], "source" : [], 
           "language" : [], "year" : [], "medium" : [], "location" : [], "ISBN-10" : [], "ISBN-13" : [], 
-          "OCLC" : [], "resources" : [], "related materials" : [], "media" : []}
+          "OCLC" : [], "resources" : [], "related materials" : [], "media" : [], "format" : []}
 
 field_vars = [pandas.NA] * len(fields)
+field_vars[-1] = "image/jpeg"
 
 metadata = pandas.DataFrame(fields)
 
@@ -254,5 +255,12 @@ add_journals(journals, metadata, copy.copy(field_vars))
 add_music(music, metadata, copy.copy(field_vars))
 add_studio(studio, metadata, copy.copy(field_vars))
 add_ephemera(ephemera, metadata, copy.copy(field_vars))
+
+# rearrange columns
+
+metadata = metadata[["objectid", "location", "creator", "title", "year", "publisher", "volume", 
+          "record company", "medium", "description", "ISBN-10", "ISBN-13", "OCLC", 
+          "language", "resources", "related materials", "media", "format", "filename", 
+          "source", "youtubeid"]]
 
 metadata.to_csv("metadata.csv")
