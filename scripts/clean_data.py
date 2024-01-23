@@ -258,7 +258,7 @@ add_ephemera(ephemera, metadata, copy.copy(field_vars))
 
 # rearrange columns
 
-metadata = metadata[["objectid", "location", "creator", "title", "year", "publisher", "volume", 
+metadata = metadata[["objectid", "kind", "location", "creator", "title", "year", "publisher", "volume", 
           "record company", "medium", "description", "ISBN-10", "ISBN-13", "OCLC", 
           "language", "resources", "related materials", "media", "format", "filename", 
           "source", "youtubeid"]]
