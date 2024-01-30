@@ -22,7 +22,7 @@ source-code: https://github.com/CMUTech4Society/collectionbuilder-gh
 # title of site appears in banner
 title: Alma|Lewis The Black Archive
 # tagline, a short phrase that will appear throughout the site in the top banner
-tagline: a template for creating simple digital exhibits
+tagline: a digital collection of books, academic publications, and artworks connected to Black art and art history 
 # description appears in meta tags and other locations
 # this description might appear in search result lists, keep around 160 characters max
 description: "CollectionBuilder-GH is a template for creating small digital collection exhibits on GitHub Pages designed for teaching digital library skills"
