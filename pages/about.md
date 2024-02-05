@@ -18,6 +18,7 @@ This site is generated using [CollectionBuilder-GH](https://collectionbuilding.g
 
 - a CSV of collection metadata
 - a folder of JPG images or PDF documents
+- test
 
 The template repository features four objects from the University of Idaho Library's [Digital Collections](https://www.lib.uidaho.edu/digital). 
 
