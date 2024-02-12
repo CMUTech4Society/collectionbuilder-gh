@@ -1,5 +1,15 @@
 field,display_name
-title,Title
-date,Date
-description,Description
-subject,Subjects
+kind,Type,
+title,Title,
+creator,Creator,
+date,Date,
+publisher,Publisher,
+volume,Volume,
+record company,Record Company,
+medium,Medium,
+description,Description,
+ISBN-10,ISBN-10,
+ISBN-13,ISBN-13,
+OCLC,OCLC,
+resources,Resources,
+media,Media

@@ -2,7 +2,7 @@ field,display_name,browse_link,external_link
 kind,Type,
 title,Title,
 creator,Creator,
-year,Year,
+date,Date,
 publisher,Publisher,
 volume,Volume,
 record company,Record Company,
