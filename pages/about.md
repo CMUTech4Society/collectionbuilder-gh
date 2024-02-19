@@ -13,17 +13,13 @@ credits: true
 
 {% include feature/nav-menu.html sections="About the Collection;About the About Page" %}
 
+navbar-color: navbar-dark
+navbar-background: bg-dark
+base-font-size: 1.2em
+text-color: "#191919"
+
 ## About the Collection
 
-This site is generated using [CollectionBuilder-GH](https://collectionbuilding.github.io/gh/), a project to create a free and simple digital collection using [GitHub Pages](https://pages.github.com/) from: 
-
-- a CSV of collection metadata
-- a folder of JPG images or PDF documents
-- test
-
-The template repository features four objects from the University of Idaho Library's [Digital Collections](https://www.lib.uidaho.edu/digital). 
-
-For full details of creating your own collection site, visit [CollectionBuilder Documentation](https://collectionbuilder.github.io/cb-docs/)!
-
-<!-- IMPORTANT!!! DELETE this comment and the include below when you are finished editing this page for your collection. The include below introduces about page features. They will show up on your collection's about page until you delete it.  -->
-{% include cb/about_the_about.md %} 
+We’re working on this project in partnership with Alma|Lewis, a nonprofit art gallery and organization dedicated to Black art and culture. In addition to curating gallery exhibitions, they offer residencies and fellowships for up-and-coming Black artists and scholars, building and empowering a strong creative community.
+Alma|Lewis is currently developing The Black Archive, a library collection of books, academic publications, and artworks connected to or about Black art and art history that will be available as a resource for scholars, researchers, and artists.
+As part of this larger project, they want to create an easy-to-maintain online catalog so visitors to their website can view and search the archive contents online.
