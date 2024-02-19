@@ -12,10 +12,6 @@ credits: true
 
 {% include feature/nav-menu.html sections="About the Collection;About the About Page" %}
 
-navbar-color: navbar-dark
-navbar-background: bg-dark
-base-font-size: 1.2em
-text-color: "#191919"
 
 ## About the Collection
 
