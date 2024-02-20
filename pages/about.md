@@ -8,7 +8,8 @@ credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-{% include feature/jumbotron.html objectid="https://www.almalewis.org/wp-content/uploads/2023/10/10.10.2023_TajhRustWelcome_0150-scaled.jpg" %}
+{% include feature/jumbotron.html objectid="https://www.almalewis.org/wp-content/uploads/2023/10/10.10.2023_TajhRustWelcome_0150-scaled.jpg" 
+ padding="9em" %}
 
 {% include feature/nav-menu.html sections="About the Collection;About the About Page" %}
 
