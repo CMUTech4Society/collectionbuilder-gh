@@ -1,4 +1,4 @@
-field,display_name,external_link
+field,display_name,true,external_link
 kind,Type,
 title,Title,
 creator,Creator,
@@ -13,4 +13,3 @@ ISBN-13,ISBN-13,
 OCLC,OCLC,
 resources,Resources,
 media,Media
-browse_link,,true
