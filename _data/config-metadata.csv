@@ -1,4 +1,4 @@
-field,Archive Data,browse_link,external_link
+field,Archive Data,true,external_link
 kind,Type,
 title,Title,,DCTERMS.title
 creator,Creator,
