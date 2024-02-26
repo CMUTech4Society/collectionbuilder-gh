@@ -1,7 +1,15 @@
 field,index,display
-title,true,true
-date,true,true
-creator,true,false
-description,true,true
-subject,true,true
-location,true,false
+Type,true,true
+Title,true,true
+Creator,true,true
+Date,true,true
+Publisher,true,true
+Volume,true,true
+Record Company,true,true
+Medium,true,true
+Description,true,true
+ISBN-10,true,true
+ISBN-13,true,true
+OCLC,true,true
+Resources,true,true
+Media,true,true
