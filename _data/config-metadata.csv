@@ -1,6 +1,6 @@
 field,Archive Data,true,external_link
 kind,Type,
-title,Title,,DCTERMS.title
+title,Title,,
 creator,Creator,
 date,Date,
 publisher,Publisher,
