@@ -1,6 +1,6 @@
-"title",Archive Data,true,external_link
-kind,Type,
-title,Title,,
+field,display_name,browse_link,external_link
+kind,Type,true
+title,Title,true
 creator,Creator,
 date,Date,
 publisher,Publisher,
