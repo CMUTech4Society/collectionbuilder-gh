@@ -1,9 +1,6 @@
 field,display_name,btn,hidden,sort_name
-field,display_name
 date,Date,,,Date
-creator,Creator,,,
-subject,,true
-location,,true
-hidden,,true
-sort_name,,true
-btn,,true
+creator,Creator,,,,
+hidden,,,true,
+sort_name,,,,true
+btn,,true,,,
