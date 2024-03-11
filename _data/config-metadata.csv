@@ -1,6 +1,8 @@
-field,display_name,btn,hidden,sort_name
-date,Date,,,Date
-creator,Creator,,,,
-hidden,,,true,
-sort_name,,,,true
-btn,,true,,,
+kind,Type,
+title,Title,
+creator,Creator,
+year,Year,
+date,Date,
+publisher,Publisher,
+volume,Volume,
+record company,Record Company,
