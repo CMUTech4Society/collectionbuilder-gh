@@ -1,12 +1,9 @@
-field,display_name,browse_link,external_link
-kind,Type,
-title,Title,
-creator,Creator,
-date,Date,
-publisher,Publisher,
-volume,Volume,
-record company,Record Company,
-medium,Medium,
-description,Description,
-resources,Resources,
-media,Media
+field,display_name,btn,hidden,sort_name
+field,display_name
+date,Date,,,Date
+creator,Creator,,,
+subject,,true
+location,,true
+hidden,,true
+sort_name,,true
+btn,,true
