@@ -1,10 +1,9 @@
-field,display_name,browse_link,btn,hidden,sort_name
+field,display_name,btn,hidden,sort_name
 field,display_name
 date,Date,,,Date
 creator,Creator,,,
-subject,,
-location,,
-hidden,,
-sort_name,,
-btn,,
-uniqueid,,true
+subject,,true
+location,,true
+hidden,,true
+sort_name,,true
+btn,,true
