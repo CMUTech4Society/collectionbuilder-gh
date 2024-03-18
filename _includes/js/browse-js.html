@@ -20,39 +20,39 @@ function makeCard(obj) {
     // find item link
     var itemHref = "{{ '/item.html' | relative_url | append: '?id=' }}" + obj.link;
     // find images
-    var imgSrc, thumbSrc;
-    // add images or thumb for objects based on format
-    if(obj.youtube) {
-        imgSrc = 'https://img.youtube.com/vi/' + obj.youtube + '/hqdefault.jpg';
-    } else if (obj.format.includes("image")) {
-        imgSrc = obj.filename;
-    } else if (obj.format.includes("audio")) {
-        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-audio }}.svg';
-    } else if (obj.format.includes("video")) {
-        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-video }}.svg';  
-    } else if (obj.format.includes("pdf")) {
-        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-pdf }}.svg';
-    } else if (obj.format.includes("record")) {
-        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-record }}.svg';
-    } else if (obj.format.includes("compound")) {
-        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-compound-object }}.svg';
-    } else if (obj.format.includes("multiple")) {
-        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-multiple }}.svg';
-    } else {
-        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-default }}.svg';
-    }  
+    // var imgSrc, thumbSrc;
+    // // add images or thumb for objects based on format
+    // if(obj.youtube) {
+    //     imgSrc = 'https://img.youtube.com/vi/' + obj.youtube + '/hqdefault.jpg';
+    // } else if (obj.format.includes("image")) {
+    //     imgSrc = obj.filename;
+    // } else if (obj.format.includes("audio")) {
+    //     thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-audio }}.svg';
+    // } else if (obj.format.includes("video")) {
+    //     thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-video }}.svg';  
+    // } else if (obj.format.includes("pdf")) {
+    //     thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-pdf }}.svg';
+    // } else if (obj.format.includes("record")) {
+    //     thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-record }}.svg';
+    // } else if (obj.format.includes("compound")) {
+    //     thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-compound-object }}.svg';
+    // } else if (obj.format.includes("multiple")) {
+    //     thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-multiple }}.svg';
+    // } else {
+    //     thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-default }}.svg';
+    // }  
     // start card
     var card = '<div class="item col-lg-4 col-md-6 col-sm-12 mb-2"><div class="card">';
     // top image for photos
-    if(imgSrc) {
-        card += '<a href="' + itemHref + '"> <img class="card-img-top lazyload" data-src="' + imgSrc + '" alt="Image of ' + obj.title + '"></a>';
-    }
+    // if(imgSrc) {
+    //     card += '<a href="' + itemHref + '"> <img class="card-img-top lazyload" data-src="' + imgSrc + '" alt="Image of ' + obj.title + '"></a>';
+    // }
     // title
     card += '<div class="card-body text-center"> <h3 class="card-title h4"><a href="' + itemHref + '" class="text-dark">' + obj.title + '</a></h3>';
     // thumb for non-photo items
-    if(thumbSrc){
-        card += '<p><a href="' + itemHref + '"><img class="lazyload w-50" data-src="' + thumbSrc + '" alt="Image of ' + obj.title + '"></a></p>';
-    }
+    // if(thumbSrc){
+    //     card += '<p><a href="' + itemHref + '"><img class="lazyload w-50" data-src="' + thumbSrc + '" alt="Image of ' + obj.title + '"></a></p>';
+    // }
     // other fields
     card += '<p class="card-text">';
     {% for f in fields %}{% unless f.hidden == 'true' %}
@@ -73,24 +73,24 @@ function makeCard(obj) {
     {% endunless %}{% endfor %}
     card += '</p>';
     // media type
-    if(obj.format != "") {
-        card += '<p class="card-text"><small><a class="btn btn-sm btn-outline-secondary" href="{{ '/browse.html' | relative_url }}#' + encodeURIComponent(obj.format) + '">' + 
-        obj.format.split("/").pop().replace("_", " ").toUpperCase() + ' <svg class="bi icon-sprite"><use xlink:href="{{ "/assets/lib/cb-icons.svg" | relative_url }}#';
-        if(obj.format.includes('image')){
-            card += 'icon-image';
-        } else if(obj.format.includes('audio')){
-            card += 'icon-audio';
-        } else if(obj.format.includes('video')){
-            card += 'icon-video';
-        } else if(obj.format.includes('multiple')){
-            card += 'icon-multiple';
-        } else if(obj.format.includes('compound')){
-            card += 'icon-compound-object';
-        } else {
-            card += 'icon-default';
-        }
-        card += '"></span></a></small></p>';
-    }
+    // if(obj.format != "") {
+    //     card += '<p class="card-text"><small><a class="btn btn-sm btn-outline-secondary" href="{{ '/browse.html' | relative_url }}#' + encodeURIComponent(obj.format) + '">' + 
+    //     obj.format.split("/").pop().replace("_", " ").toUpperCase() + ' <svg class="bi icon-sprite"><use xlink:href="{{ "/assets/lib/cb-icons.svg" | relative_url }}#';
+    //     if(obj.format.includes('image')){
+    //         card += 'icon-image';
+    //     } else if(obj.format.includes('audio')){
+    //         card += 'icon-audio';
+    //     } else if(obj.format.includes('video')){
+    //         card += 'icon-video';
+    //     } else if(obj.format.includes('multiple')){
+    //         card += 'icon-multiple';
+    //     } else if(obj.format.includes('compound')){
+    //         card += 'icon-compound-object';
+    //     } else {
+    //         card += 'icon-default';
+    //     }
+    //     card += '"></span></a></small></p>';
+    // }
     // view button
     card += '<hr><a href="' + itemHref + '" class="btn btn-sm btn-light" title="link to ' + obj.title + '">View Full Record</a>';
     // close divs
