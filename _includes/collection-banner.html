@@ -21,7 +21,8 @@
         <div class="p-2 text-center text-white bg-dark bg-opacity-75">
             <a class="d-none d-md-block" href="{{ site.organization-link }}" target="_blank" rel="noopener">
                 <svg class="site-logo" width="217" height="31" focusable="false" viewbox="0 0 207 44">
-                    <g fill="none" fill-rule="evenodd"><path fill="#D1D3D4" d="M0 31h31V0H0zM46 16h15V0H46z"></path><path fill="#414042" d="M31 16h15V0H31z"></path><path fill="#231F20" d="M30 31h31V16H30z"></path><path d="M0 15.45v15.24h15.262V.21C6.832.21 0 7.033 0 15.45" fill="#9E0000"></path><path d="M30.524 15.45C30.524 7.033 23.69.21 15.262.21v30.48h15.262V15.45zM90.372" fill="#F40303"></path></g>                </svg>
+                    <g fill="none" fill-rule="evenodd"><path fill="#D1D3D4" d="M0 31h31V0H0zM46 16h15V0H46z"></path><path fill="#414042" d="M31 16h15V0H31z"></path><path fill="#231F20" d="M30 31h31V16H30z"></path><path d="M0 15.45v15.24h15.262V.21C6.832.21 0 7.033 0 15.45" fill="#9E0000"></path><path d="M30.524 15.45C30.524 7.033 23.69.21 15.262.21v30.48h15.262V15.45zM90.372" fill="#F40303"></path></g>                
+                </svg>
             </a>
             <h1 class="display-4">{{ site.title }}</h1>
             {% if site.tagline %}<p class="mb-0">{{ site.tagline }}</p>{% endif %}
@@ -36,6 +37,9 @@
 <div class="container">
     <div class="row align-items-center">
         <div id="title" class="{% if site.organization-logo-banner %}col-md-9{% else %}col-12{% endif %}">
+            <svg class="site-logo" width="217" height="31" focusable="false" viewbox="0 0 207 44">
+                    <g fill="none" fill-rule="evenodd"><path fill="#D1D3D4" d="M0 31h31V0H0zM46 16h15V0H46z"></path><path fill="#414042" d="M31 16h15V0H31z"></path><path fill="#231F20" d="M30 31h31V16H30z"></path><path d="M0 15.45v15.24h15.262V.21C6.832.21 0 7.033 0 15.45" fill="#9E0000"></path><path d="M30.524 15.45C30.524 7.033 23.69.21 15.262.21v30.48h15.262V15.45zM90.372" fill="#F40303"></path></g>                
+            </svg>
             <h1><a class="text-dark font-weight-normal" href="{{ site.baseurl }}/" >{{ site.title }}</a></h1>	 
             {% if site.tagline %}<p>{{ site.tagline }}</p>{% endif %}
         </div>
