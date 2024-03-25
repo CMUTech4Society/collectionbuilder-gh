@@ -68,7 +68,7 @@ custom-foot: js/timeline-js.html
                             alt="{{ item.title | escape }}" 
                             data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ item.title | escape }} | {{ item.date | escape }}"> -->
 
-                        {% else %}
+                        <!-- {% else %} -->
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <div class="h5 text-dark">{{ item.title }}</div>
@@ -83,7 +83,7 @@ custom-foot: js/timeline-js.html
                                 {%- endif -%}" alt="filetype thumbnail">
                             </div>
                         </div>
-                        {% endif %}
+                        <!-- {% endif %} -->
                     </a>
                 </div>
                 {% endfor %}
