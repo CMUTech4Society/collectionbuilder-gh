@@ -37,7 +37,6 @@
     color: #f70000;
     background: rgba(255,255,255,.10);
 }
-
 #item-table_wrapper {
     overflow: auto;
     white-space: nowrap;
@@ -60,17 +59,17 @@
     vertical-align: baseline;
     border: 0;
     text-align: center;
-    background-color: transparent;
-    -webkit-transition: color 500ms, background 500ms;
-    -o-transition: color 500ms, background 500ms;
-    transition: color 500ms, background 500ms;
-    padding: .675em 1.3em;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.2;
-    text-transform: uppercase;
-    letter-spacing: .75px;
-    background: #000;
+    // background-color: transparent;
+    // -webkit-transition: color 500ms, background 500ms;
+    // -o-transition: color 500ms, background 500ms;
+    // transition: color 500ms, background 500ms;
+    // padding: .675em 1.3em;
+    // font-size: 18px;
+    // font-weight: 600;
+    // line-height: 1.2;
+    // text-transform: uppercase;
+    // letter-spacing: .75px;
+    // background: #000;
     font-family: "Barlow Condensed", sans-serif;
     color: #fff;
 }
