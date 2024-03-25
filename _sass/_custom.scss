@@ -82,3 +82,16 @@
     font-family: "Montserrat",sans-serif;
     font-size: 19px;
 }
+
+//browse search button
+#filterButton {
+    background-color: #f00; /* Red */
+    border-color: #f00;
+    color: #fff;
+}
+
+#filterButton:hover {
+    background-color: #f00; /* Red */
+    border-color: #000;
+    color: #fff;
+}
