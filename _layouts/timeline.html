@@ -59,13 +59,8 @@ custom-foot: js/timeline-js.html
                             alt="{{ item.title | escape }}" 
                             data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ item.title | escape }} | {{ item.date | escape }}"> -->
                         
-                        <img class="lazyload img-thumbnail timeline-thumb" data-src="{% if item.filename contains '/' %}
-                                        {{ item.filename }}
-                                    {% else %}
-                                        {{ item.filename | prepend: '/objects/' | relative_url }}
-                                    {% endif %}" 
-                            alt="{{ item.title | escape }}" 
-                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ item.title | escape }} | {{ item.date | escape }}">
+                        {{item.title}}
+                        </a>
 
                         {% else %}
                         <div class="card"> 
