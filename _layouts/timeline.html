@@ -48,7 +48,7 @@ custom-foot: js/timeline-js.html
                 {% for item in inYear %}
                 <div class="col-lg-4 col-md-6">
                     <a href="{% if item.parentid == nil %}{{ '/item.html' | relative_url | append: '?id=' | append: item.objectid }}{% elsif item.parentid %}{{ '/item.html' | relative_url | append: '?id=' | append: item.parentid | relative_url }}#{{ item.objectid }}{% endif %}" >
-                        <!-- {% if item.format contains 'image' or item.youtubeid %} -->
+                        {% if item.format contains 'image' or item.youtubeid %}
                         
                         <!-- <img class="lazyload img-thumbnail timeline-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" 
                             data-src=
@@ -59,16 +59,15 @@ custom-foot: js/timeline-js.html
                             alt="{{ item.title | escape }}" 
                             data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ item.title | escape }} | {{ item.date | escape }}"> -->
                         
-                        <!-- <img class="lazyload img-thumbnail timeline-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" 
-                            data-src=
-                                "{% if item.youtubeid %}
-                                    {{ 'https://img.youtube.com/vi/' | append: item.youtubeid | append: '/hqdefault.jpg' | relative_url }}
-                                {% elsif item.filename contains '/' %}
-                                    {{ item.filename }}{% else %}{{ item.filename | prepend: '/objects/' | relative_url }}{% endif %}" 
+                        <img class="lazyload img-thumbnail timeline-thumb" data-src="{% if item.filename contains '/' %}
+                                        {{ item.filename }}
+                                    {% else %}
+                                        {{ item.filename | prepend: '/objects/' | relative_url }}
+                                    {% endif %}" 
                             alt="{{ item.title | escape }}" 
-                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ item.title | escape }} | {{ item.date | escape }}"> -->
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ item.title | escape }} | {{ item.date | escape }}">
 
-                        <!-- {% else %} -->
+                        {% else %}
                         <div class="card"> 
                             <div class="card-body text-center">
                                 <div class="h5 text-dark">{{ item.title }}</div>
@@ -83,7 +82,7 @@ custom-foot: js/timeline-js.html
                                 {%- endif -%}" alt="filetype thumbnail">
                             </div>
                         </div>
-                        <!-- {% endif %} -->
+                        {% endif %}
                     </a>
                 </div>
                 {% endfor %}
