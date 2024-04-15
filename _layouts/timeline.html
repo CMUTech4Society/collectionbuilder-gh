@@ -46,7 +46,7 @@ custom-foot: js/timeline-js.html
             <div class="row">
                 {%- assign inYear = items | where_exp: 'item', 'item.date contains year' -%}
                 {% for item in inYear %}
-                <div class="col-lg-4 col-md-6" color = "#3f3f3f">
+                <div class="col-lg-4 col-md-6" color = "#3f3f3f" margin-bottom: "20px">
                     <a href="{% if item.parentid == nil %}{{ '/item.html' | relative_url | append: '?id=' | append: item.objectid }}{% elsif item.parentid %}{{ '/item.html' | relative_url | append: '?id=' | append: item.parentid | relative_url }}#{{ item.objectid }}{% endif %}" >
                         {% if item.format contains 'image' or item.youtubeid %}
                         
