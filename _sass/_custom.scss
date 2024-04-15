@@ -41,6 +41,15 @@
     overflow: auto;
     white-space: nowrap;
 } 
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: "Barlow Condensed",sans-serif;
+}
+
 .card-body {
     color: black;
     font-family: "Montserrat", sans-serif;
@@ -52,6 +61,7 @@
     font-family: "Barlow Condensed",sans-serif;
     font-size: 25px;
 }
+
 .btn .btn-outline-primary{
      text-decoration: none;
 //     cursor: pointer;
