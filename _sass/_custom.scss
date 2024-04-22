@@ -39,7 +39,10 @@
 }
 #item-table_wrapper {
     overflow: auto;
-    white-space: nowrap;
+    overflow-wrap: break-word;
+    hyphens: manual;
+    white-space: normal;
+    text-wrap: wrap;
 } 
 
 td.sorting_1 {
