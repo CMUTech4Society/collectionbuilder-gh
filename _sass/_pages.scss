@@ -41,6 +41,10 @@
 
 
 /* browse */
+.accordion {
+    display: flex;
+    align-items: left;
+}
 
 /* map */
 #map { height: 750px; z-index: 98; }
