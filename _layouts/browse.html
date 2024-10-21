@@ -38,9 +38,16 @@ custom-foot: js/browse-js.html
     <div class="spinner-border text-dark" role="status"><span class="visually-hidden">Loading...</span></div>
 </div>
 
-{% include feature/accordion.html title1="Media Format" text1="Search by item type" title2="Author/Artist" text2="Search by author/artist" title3="Date" text3="Search by date range" title4="Languages" text4="Search by language" title5="Topic" text5="Search by topic"%}
-
-<div class="row" id="browseItems"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-none d-md-block col-md-3">
+            {% include feature/accordion.html title1="Media Format" text1="Search by item type" title2="Author/Artist" text2="Search by author/artist" title3="Date" text3="Search by date range" title4="Languages" text4="Search by language" title5="Topic" text5="Search by topic"%}
+        </div>
+        <div class="col-12 col-md-9 pl-5">
+            <div class="row" id="browseItems"></div>
+        </div>
+    </div>
+</div>
 
 <div class="row justify-content-center mt-4">
     <nav aria-label="Page navigation">
