@@ -41,3 +41,21 @@ custom-foot: js/browse-js.html
 {% include feature/accordion.html title1="Media Format" text1="Search by item type" title2="Author/Artist" text2="Search by author/artist" title3="Date" text3="Search by date range" title4="Languages" text4="Search by language" title5="Topic" text5="Search by topic"%}
 
 <div class="row" id="browseItems"></div>
+
+<div class="row justify-content-center mt-4">
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item">
+                <button class="page-link" id="prevPage" onclick="loadPrevPage();" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </button>
+            </li>
+            <!-- Page numbers will be dynamically inserted here -->
+            <li class="page-item">
+                <button class="page-link" id="nextPage" onclick="loadNextPage();" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</div>
