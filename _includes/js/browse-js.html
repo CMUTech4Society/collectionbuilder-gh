@@ -293,6 +293,16 @@ function updatePaginator(page) {
     `;
 }
 
+    // Add next button
+    paginationContainer.innerHTML += `
+        <li class="page-item">
+            <button class="page-link" id="nextPage" onclick="loadNextPage();" aria-label="Next" ${page === totalPages ? 'disabled' : ''}>
+                <span aria-hidden="true">&raquo;</span>
+            </button>
+        </li>
+    `;
+}
+
 // Load the previous page
 function loadPrevPage() {
     if (currentPage > 1) {
