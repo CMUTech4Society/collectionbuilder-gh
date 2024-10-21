@@ -226,4 +226,73 @@ sortOptions.forEach((button) => {
     }
   });
 }); 
+
+const itemsPerPage = 10; // Number of cards per page
+let currentPage = 1;
+let totalItems = 0; // This should be dynamically set based on your collection
+
+// Function to render the current page of items
+function renderPage(page) {
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    
+    // Clear previous items
+    const browseItemsContainer = document.getElementById('browseItems');
+    browseItemsContainer.innerHTML = '';
+
+    // Fetch and display the items for the current page (you need to load your collection here)
+    const itemsToShow = allItems.slice(start, end); // Assuming allItems contains the collection
+    itemsToShow.forEach(item => {
+        // Create and append your card/item elements here
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('col-md-4', 'card-item');
+        itemElement.innerHTML = `
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">${item.title}</h5>
+                    <p class="card-text">${item.description}</p>
+                </div>
+            </div>
+        `;
+        browseItemsContainer.appendChild(itemElement);
+    });
+
+    updatePaginator(page);
+}
+
+// Function to update the paginator UI
+function updatePaginator(page) {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const prevPageButton = document.getElementById('prevPage');
+    const nextPageButton = document.getElementById('nextPage');
+    
+    // Enable or disable previous/next buttons based on current page
+    prevPageButton.disabled = page === 1;
+    nextPageButton.disabled = page === totalPages;
+
+    // Update page numbers if necessary (add logic if you want to show actual page numbers)
+}
+
+// Load the previous page
+function loadPrevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        renderPage(currentPage);
+    }
+}
+
+// Load the next page
+function loadNextPage() {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    if (currentPage < totalPages) {
+        currentPage++;
+        renderPage(currentPage);
+    }
+}
+
+// Initial load
+document.addEventListener('DOMContentLoaded', function() {
+    totalItems = allItems.length; // Set this to the actual total number of items in your collection
+    renderPage(currentPage);
+});
 </script>
