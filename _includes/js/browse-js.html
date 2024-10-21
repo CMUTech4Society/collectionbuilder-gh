@@ -227,7 +227,7 @@ sortOptions.forEach((button) => {
   });
 }); 
 
-const itemsPerPage = 10; // Number of cards per page
+const itemsPerPage = 9; // Number of cards per page
 let currentPage = 1;
 let totalItems = 0; // This should be dynamically set based on your collection
 
@@ -263,14 +263,34 @@ function renderPage(page) {
 // Function to update the paginator UI
 function updatePaginator(page) {
     const totalPages = Math.ceil(totalItems / itemsPerPage);
-    const prevPageButton = document.getElementById('prevPage');
-    const nextPageButton = document.getElementById('nextPage');
+    const paginationContainer = document.querySelector('.pagination');
     
-    // Enable or disable previous/next buttons based on current page
-    prevPageButton.disabled = page === 1;
-    nextPageButton.disabled = page === totalPages;
+    // Clear any existing page numbers
+    paginationContainer.innerHTML = `
+        <li class="page-item">
+            <button class="page-link" id="prevPage" onclick="loadPrevPage();" aria-label="Previous" ${page === 1 ? 'disabled' : ''}>
+                <span aria-hidden="true">&laquo;</span>
+            </button>
+        </li>
+    `;
 
-    // Update page numbers if necessary (add logic if you want to show actual page numbers)
+    // Add page number buttons
+    for (let i = 1; i <= totalPages; i++) {
+        paginationContainer.innerHTML += `
+            <li class="page-item ${i === page ? 'active' : ''}">
+                <button class="page-link" onclick="renderPage(${i});">${i}</button>
+            </li>
+        `;
+    }
+
+    // Add next button
+    paginationContainer.innerHTML += `
+        <li class="page-item">
+            <button class="page-link" id="nextPage" onclick="loadNextPage();" aria-label="Next" ${page === totalPages ? 'disabled' : ''}>
+                <span aria-hidden="true">&raquo;</span>
+            </button>
+        </li>
+    `;
 }
 
 // Load the previous page
