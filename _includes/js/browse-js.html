@@ -241,7 +241,7 @@ function renderPage(page) {
     browseItemsContainer.innerHTML = '';
 
     // Fetch and display the items for the current page (you need to load your collection here)
-    const itemsToShow = allItems.slice(start, end); // Assuming allItems contains the collection
+    const itemsToShow = items.slice(start, end); // Assuming allItems contains the collection
     itemsToShow.forEach(item => {
         // Create and append your card/item elements here
         const itemElement = document.createElement('div');
@@ -292,7 +292,7 @@ function loadNextPage() {
 
 // Initial load
 document.addEventListener('DOMContentLoaded', function() {
-    totalItems = allItems.length; // Set this to the actual total number of items in your collection
+    totalItems = items.length; // Set this to the actual total number of items in your collection
     renderPage(currentPage);
 });
 </script>
