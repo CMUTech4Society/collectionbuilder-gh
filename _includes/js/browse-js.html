@@ -246,17 +246,8 @@ function renderPage(page) {
     const itemsToShow = (filteredItems || items).slice(start, end); // Assuming allItems contains the collection
     itemsToShow.forEach(item => {
         // Create and append your card/item elements here
-        const itemElement = document.createElement('div');
-        itemElement.classList.add('col-md-4', 'card-item');
-        itemElement.innerHTML = `
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">${item.title}</h5>
-                    <p class="card-text">${item.description}</p>
-                </div>
-            </div>
-        `;
-        browseItemsContainer.appendChild(itemElement);
+        const cardHTML = makeCard(item);
+        browseItemsContainer.insertAdjacentHTML('beforeend', cardHTML);
     });
 
     updatePaginator(page);
