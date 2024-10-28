@@ -127,7 +127,9 @@ function filterItems(arr,q) {
     for (var i = 0, len = filteredItems.length; i < len; i++) {
         cards += makeCard(filteredItems[i]);
     }
-    browseItemsDiv.innerHTML = cards;
+    totalItems = filteredItems.length; // update total items to match filtered items
+    currentPage = 1; // reset to the first page on new filter
+    renderPage(currentPage, filteredItems); // update to render the filtered items
 
     // finish
     filterButton.focus();
@@ -229,7 +231,7 @@ sortOptions.forEach((button) => {
 
 const itemsPerPage = 9; // Number of cards per page
 let currentPage = 1;
-let totalItems = 0; // This should be dynamically set based on your collection
+let totalItems = items.length; // This should be dynamically set based on your collection
 
 // Function to render the current page of items
 function renderPage(page) {
@@ -241,7 +243,7 @@ function renderPage(page) {
     browseItemsContainer.innerHTML = '';
 
     // Fetch and display the items for the current page (you need to load your collection here)
-    const itemsToShow = items.slice(start, end); // Assuming allItems contains the collection
+    const itemsToShow = (filteredItems || items).slice(start, end); // Assuming allItems contains the collection
     itemsToShow.forEach(item => {
         // Create and append your card/item elements here
         const itemElement = document.createElement('div');
