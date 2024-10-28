@@ -100,6 +100,8 @@ function makeCard(obj) {
             return card;
 }
 
+let filteredItems = items;
+
 /* filter items function */
 function filterItems(arr,q) {
     // show loading icon
@@ -167,7 +169,7 @@ if(window.location.hash) {
     filterItems(items,query);
 } else {
     query = "";
-    filterItems(items,query);
+    filterItems(items,"");
 }
 
 /* filter form */
