@@ -239,6 +239,8 @@ let totalItems = items.length; // This should be dynamically set based on your c
 function renderPage(page) {
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
+
+    console.log('Rendering page', page, 'with items:', itemsToShow);
     
     // Clear previous items
     const browseItemsContainer = document.getElementById('browseItems');
