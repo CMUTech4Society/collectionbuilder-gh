@@ -102,6 +102,8 @@ function makeCard(obj) {
 
 let filteredItems = items;
 let totalItems = items.length; // This should be dynamically set based on your collection
+let currentPage = 1;
+
 /* filter items function */
 function filterItems(arr,q) {
     // show loading icon
@@ -232,7 +234,6 @@ sortOptions.forEach((button) => {
 }); 
 
 const itemsPerPage = 9; // Number of cards per page
-let currentPage = 1;
 
 // Function to render the current page of items
 function renderPage(page) {
