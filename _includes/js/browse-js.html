@@ -107,24 +107,31 @@ const itemsPerPage = 9; // Number of cards per page
 let itemsToShow = [];
 
 /* filter items function */
-function filterItems(arr,q) {
-    // show loading icon
+function filterItems(arr, q) {
+    // Show loading icon
     loadingIcon.classList.remove("d-none");
-    // dont filter if no q 
-    if (q=="") { 
-        var filteredItems = arr; 
+
+    // Filter logic
+    if (!q) {
+        filteredItems = [...arr]; // Default to all items
     } else {
-        q = q.trim().toUpperCase(); 
-        // js indexOf filter
-        var filteredItems = [];
-        for (var i = 0, len = arr.length; i < len; i++) {
-            var val = "";
-        for (var k in arr[i]) { val += arr[i][k] + " "; }
-            if(val.toUpperCase().indexOf(q) != -1){
-                filteredItems.push(arr[i]);
-            }
-        }
+        q = q.trim().toUpperCase();
+        filteredItems = arr.filter((item) => {
+            const val = Object.values(item).join(" ").toUpperCase();
+            return val.includes(q);
+        });
     }
+
+    // Update UI
+    totalItems = filteredItems.length; // Update total items count
+    currentPage = 1; // Reset to first page
+    document.querySelector("#numberOf").innerHTML = `${filteredItems.length} of ${items.length} items`;
+    
+    renderPage(currentPage); // Render the filtered items
+
+    // Hide loading icon
+    loadingIcon.classList.add("d-none");
+}
     // add number 
     document.querySelector("#numberOf").innerHTML = filteredItems.length + " of " + items.length + " items";
     
@@ -240,21 +247,20 @@ function renderPage(page) {
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
 
-    console.log('Rendering page', page, 'with items:', itemsToShow);
-    
-    // Clear previous items
+    // Get container and clear previous content
     const browseItemsContainer = document.getElementById('browseItems');
     browseItemsContainer.innerHTML = '';
 
-    // Fetch and display the items for the current page (you need to load your collection here)
-    itemsToShow = (filteredItems || items).slice(start, end); // Assuming allItems contains the collection
+    // Slice items for the current page
+    itemsToShow = filteredItems.slice(start, end);
+
+    // Render each item
     itemsToShow.forEach(item => {
-        // Create and append your card/item elements here
         const cardHTML = makeCard(item);
         browseItemsContainer.insertAdjacentHTML('beforeend', cardHTML);
     });
 
-    updatePaginator(page);
+    updatePaginator(page); // Update paginator
 }
 
 // Function to update the paginator UI
@@ -288,8 +294,9 @@ function loadNextPage() {
 }
 
 // Initial load
-document.addEventListener('DOMContentLoaded', function() {
-    totalItems = items.length; // Set this to the actual total number of items in your collection
-    renderPage(currentPage);
+document.addEventListener('DOMContentLoaded', () => {
+    filteredItems = [...items]; // Set filteredItems to all items initially
+    totalItems = items.length; // Total items count
+    renderPage(currentPage); // Render first page
 });
 </script>
