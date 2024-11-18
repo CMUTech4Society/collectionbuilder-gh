@@ -131,7 +131,6 @@ function filterItems(arr, q) {
 
     // Hide loading icon
     loadingIcon.classList.add("d-none");
-}
     // add number 
     document.querySelector("#numberOf").innerHTML = filteredItems.length + " of " + items.length + " items";
     
@@ -296,7 +295,7 @@ function loadNextPage() {
 // Initial load
 document.addEventListener('DOMContentLoaded', () => {
     filteredItems = [...items]; // Set filteredItems to all items initially
-    totalItems = items.length; // Total items count
+    totalItems = filteredItems.length; // Total items count
     renderPage(currentPage); // Render first page
 });
 </script>
