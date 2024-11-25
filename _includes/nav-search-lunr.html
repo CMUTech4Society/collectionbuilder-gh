@@ -2,7 +2,7 @@
     function site_search() {
         var query = document.getElementById("site-search").value;
         console.log(document.getElementById("site-search"));
-        window.open("{{ '/search.html' | relative_url }}?q=" + encodeURIComponent(query), "_self" );
+        window.open("{{ '/search/index.html' | relative_url }}?q=" + encodeURIComponent(query), "_self" );
         
     }
 </script>
